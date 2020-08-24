@@ -39,6 +39,105 @@
 }
 ```
 
+---
+
+## 로그인
+
+### Post /user/login
+
+### Request
+
+```
+{
+    "userId": "userId",
+    "password": "password"
+}
+```
+
+### Response
+
+성공
+
+```
+200
+{
+    "message":"성공",
+    "accessToken": "accessToken"
+}
+```
+틀린 비밀번호 
+```
+403
+{
+    "message": "로그인 실패"
+} 
+```
+틀린 아이디
+
+```
+404
+{
+    "message":"존재하지 않는 유저"
+}
+```
+
+서버 에러
+
+```
+500
+{
+    "message": "서버 에러"
+}
+```
+
+---
+
+## todo 작성
+
+### Post /todo
+
+### Request
+
+```
+body
+{
+    "content": "content"
+    
+}
+header
+{
+    "access-token": "access-token"
+}
+```
+
+### Response
+
+성공
+
+```
+200
+{
+    "message":"투두 작성 성공"
+}
+```
+로그인 되어있지 않음 
+```
+403
+{
+    "message": "로그인되어있지 않음"
+} 
+```
+
+
+서버 에러
+
+```
+500
+{
+    "message": "서버 에러"
+}
+```
+
 ```
 
 
