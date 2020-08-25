@@ -10,7 +10,7 @@
 ```
 {
     "name": "name",
-    "userID": "userId",
+    "userId": "userId",
     "password": "password"
 }
 ```
