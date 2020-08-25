@@ -138,7 +138,105 @@ header
 }
 ```
 
+---
+
+## todo 미리보기
+
+### GET /todo
+
+### Request
+
 ```
+
+header
+{
+    "access-token": "access-token"
+}
+```
+
+### Response
+
+성공
+
+```
+200
+{
+    "message":"투두 미리보기 성공"
+}
+```
+로그인 되어있지 않음 
+```
+403
+{
+    "message": "로그인되어있지 않음"
+} 
+```
+
+
+서버 에러
+
+```
+500
+{
+    "message": "서버 에러"
+}
+```
+---
+## todo 삭제
+
+### DELETE /todo
+
+### Request
+
+```
+path
+{
+    "id": "id"
+    
+}
+header
+{
+    "access-token": "access-token"
+}
+```
+
+### Response
+
+성공
+
+```
+200
+{
+    "message":"투두 삭제 성공"
+}
+```
+자신의 투두가 아님
+```
+403
+{
+    "message": "자신의 투두가 아님"
+} 
+```
+
+삭제할 투두가 없음
+
+```
+404
+{
+    "message": "삭제할 투두가 없음"
+}
+```
+
+
+서버 에러
+
+```
+500
+{
+    "message": "서버 에러"
+}
+```
+
 
 
 
