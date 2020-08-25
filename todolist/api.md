@@ -1,3 +1,6 @@
+```
+ base url:http://52.78.41.100:8000
+```
 ## 회원가입
 
 ### Post /user/register
