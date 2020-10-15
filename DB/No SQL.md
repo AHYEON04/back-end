@@ -16,7 +16,7 @@ NoSQL의 약자는 Not Only SQL, Non-Operational Database SQL로 엇갈리는 �
 
 하지만 NoSQL은 중첩데이터 형태를 띔으로써 불필요한 JOIN을 최소화 시킴
 
-![img](https://t1.daumcdn.net/cfile/tistory/991B8B3359DB7A6505)
+
 
 
 
