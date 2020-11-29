@@ -49,6 +49,76 @@ const login = async (req, res) => {
   }
 };
 
+const info = async (req, res) => {
+  const { character } = req.body;
+  const userId = req.decoded.userId;
+  try {
+    await User.update(
+      {
+        character,
+      },
+      { where: { userId } }
+    );
+    res.status(200).json({
+      message: "성공",
+    });
+  } catch (err) {
+    res.status(404).json({
+      message: "userId가 없음",
+    });
+  }
+};
+const info = async (req, res) => {
+  const { character } = req.body;
+  const userId = req.decoded.userId;
+  try {
+    await User.update(
+      {
+        character,
+      },
+      { where: { userId } }
+    );
+    res.status(200).json({
+      message: "성공",
+    });
+  } catch (err) {
+    res.status(404).json({
+      message: "userId가 없음",
+    });
+  }
+};
+
+const myPage = async (req, res) => {
+  const userId = req.decoded.userId;
+  try {
+    const user = await User.findOne({
+      where: { userId },
+      attributes: ["userId", "character", "money", "weight"],
+    });
+    const foods = await Food.findAll({
+      where: { userId },
+      attributes: ["food", [sequelize.fn("count", "*"), "count"]],
+      group: "food",
+    });
+    res.status(200).json({ user, foods });
+  } catch (err) {
+    res.status(404).json({ message: "유저가 없음" });
+  }
+};
+
+const getCharacter = async (req, res) => {
+  const userId = req.decoded.userId;
+  try {
+    const user = await User.findOne({
+      where: { userId },
+      attributes: ["character", "weight"],
+    });
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(404).json({ message: "유저를 찾을 수 없음" });
+  }
+};
+
 module.exports = {
   signup,
   login,
