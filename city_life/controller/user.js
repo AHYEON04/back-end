@@ -122,4 +122,7 @@ const getCharacter = async (req, res) => {
 module.exports = {
   signup,
   login,
+  info,
+  myPage,
+  getCharacter,
 };
