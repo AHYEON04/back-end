@@ -68,25 +68,6 @@ const info = async (req, res) => {
     });
   }
 };
-const info = async (req, res) => {
-  const { character } = req.body;
-  const userId = req.decoded.userId;
-  try {
-    await User.update(
-      {
-        character,
-      },
-      { where: { userId } }
-    );
-    res.status(200).json({
-      message: "성공",
-    });
-  } catch (err) {
-    res.status(404).json({
-      message: "userId가 없음",
-    });
-  }
-};
 
 const myPage = async (req, res) => {
   const userId = req.decoded.userId;
