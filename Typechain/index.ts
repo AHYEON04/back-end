@@ -40,7 +40,12 @@ const createNewBlock = (data: string): Block => {
   const priviosBlock: Block = getLatesBlock();
   const newIndex: number = previosBlock.index + 1;
   const nextTimestamp: number = getNewTimeStamp();
-  const nextHash: string = Block.calculateBlockHash();
+  const nextHash: string = Block.calculateBlockHash(
+    newIndex,
+    previosBlcok.hash,
+    nextTimestamp,
+    data
+  );
 };
 
 export {};
