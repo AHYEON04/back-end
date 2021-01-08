@@ -46,6 +46,13 @@ const createNewBlock = (data: string): Block => {
     nextTimestamp,
     data
   );
+  const newBLOCK: Block = new Block(
+    newIndex,
+    newHash,
+    previosBlock.hash,
+    data,
+    newTimestamp
+  );
 };
 
 export {};
