@@ -10,8 +10,6 @@ let data = [
     { id: 5, title: '배고파', order: 5, completed: false, createdOn: new Date() },
 ];
 
-// HTTP 메소드 ↓↓ 시작
-
 // READ
 // JSON 데이터 배열 반환
 router.get('/', function (req, res) {
@@ -28,8 +26,10 @@ router.get('/:id', function (req, res) {
     });
     // 개체가 발견되면 개체 반환 , 그렇지 않으면 http 상태코드 404(not-found) 반환
     if (found) {
+        //개체 반환
         res.status(200).json(found);
     } else {
+        // not-found
         res.sendStatus(404);
     }
 });
