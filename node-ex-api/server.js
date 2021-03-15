@@ -1,6 +1,6 @@
 const http = require('http');
 const express = require('express');
-var cors = require('cors');
+const cors = require('cors');
 // 'routes' 폴더에서 'items' 가져오기
 const itemsRouter = require('./routes/items');
 
