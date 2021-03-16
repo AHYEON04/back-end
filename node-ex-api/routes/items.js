@@ -3,11 +3,11 @@ const express = require('express');
 const router = express.Router();
 // JSON 데이터 배열 생성
 let data = [
-    { id: 1, title: '시나그램 파이팅',  order: 1, completed: true, createdOn: new Date() },
-    { id: 2, title: '시나브로 파이팅',     order: 2, completed: true, createdOn: new Date() },
-    { id: 3, title: '그램 파이팅', order: 3, completed: true, createdOn: new Date() },
-    { id: 4, title: '백엔드 파이팅', order: 4, completed: false, createdOn: new Date() },
-    { id: 5, title: '1학년 파이팅', order: 5, completed: false, createdOn: new Date() },
+    { id: 1, title: '안녕하세요',  order: 1, completed: true, createdOn: new Date() },
+    { id: 2, title: '시나그램 신입생 여러분',     order: 2, completed: true, createdOn: new Date() },
+    { id: 3, title: '백엔드 어떤 것 같아요?', order: 3, completed: true, createdOn: new Date() },
+    { id: 4, title: '사실 잘 모르겠조?', order: 4, completed: false, createdOn: new Date() },
+    { id: 5, title: '저도 잘 모르겠어요', order: 5, completed: false, createdOn: new Date() },
 ];
 
 // READ
