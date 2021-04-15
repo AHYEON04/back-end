@@ -6,7 +6,7 @@ class Block {
   public previousHash: string;
   public data: string;
   public timestamp: number;
-  
+
   static calculateBlockHash = (
     index:number,
     previousHash: string, 
@@ -45,7 +45,23 @@ const getNewTimeStamp = (): number => Math.round(new Date().getTime()/1000);
 const createNewBlock = (data: string): Block => {
   const previosBlock :  Block = getLatestBlock();
   const newIndex : number = previosBlock.index + 1;
-  const nextTimestamp: number = getNewTimeStamp();
+  const newTimestamp: number = getNewTimeStamp();
+  const nextHash :  string = Block.calculateBlockHash(
+    newIndex,
+    previosBlock.hash, 
+    newTimestamp,
+    data
+    );
+    const newBlock : Block = new Block(
+      newIndex,
+      nextHash,
+      previosBlock.hash,
+      data,
+      newTimestamp
+      );
+      return newBlock;
 };
+
+console.log(createNewBlock("hello"), createNewBlock("bye bye"));
 
 export {};
