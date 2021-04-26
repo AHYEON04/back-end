@@ -18,7 +18,7 @@ class Block {
   constructor(
     index: number,
     hash: string,
-    previousHash: string,
+    previousHash: string, 
     data: string,
     timestamp: number
   ) {
@@ -64,26 +64,3 @@ const createNewBlock = (data: string): Block => {
 
 console.log(createNewBlock("hello"), createNewBlock("bye bye"));
 
-const createNewBlock = (data:string): Block => {
-  const previosBlock :  Block = getLatestBlock();
-  const newIndex : number = previosBlock.index + 1;
-  const newTimestamp : number = getNewTimeStamp();
-  const newHash : string =  Block.calculateBlockHash(
-    newIndex, 
-    previosBlock.hash, 
-    newTimestamp, 
-    data
-  );
-  const newBlock : Block = new Block(
-    newIndex, 
-    newHash, 
-    previosBlock.hash, 
-    data,
-    newTimestamp
-    );
-    return newBlock;
-};
-
-console.log(createNewBlock("hello"), createNewBlock("bye bye"));
-
-export {};
